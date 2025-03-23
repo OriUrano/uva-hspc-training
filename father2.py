@@ -1,6 +1,13 @@
 from collections import Counter
 
-a = tuple(map(str, input().split()))
-c = [k for k, v in Counter(a).items() if v > 1]
+a = Counter(map(str, input().split()))
+b = a.most_common()
+
+c = []
+for k,v in b:
+    if v==b[0][1]:
+        c.append(k)
+    else:
+        break
 
 print(" ".join(c))
